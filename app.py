@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_heroku import Heroku
+import yaml
+secrets = yaml.load(open("secrets.yml"))
 
 # Configure database:
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://aftypaczlaebaq:25e840e2d1820fb545ab359c9eaa1c9ce17f4d8db7df49ea50c22622f6def3ea@ec2-54-83-29-34.compute-1.amazonaws.com:5432/dcbihhqogiluuj"
+app.config["SQLALCHEMY_DATABASE_URI"] = secrets["heroku_uri"]
 
 heroku = Heroku(app)
 
