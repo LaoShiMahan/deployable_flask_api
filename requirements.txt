@@ -22,7 +22,7 @@ psycopg2==2.7.5
 py==1.6.0
 pycparser==2.19
 pytest==3.8.1
-PyYAML==3.13
+PyYAML==5.4
 requests==2.19.1
 selenium==3.14.1
 six==1.11.0
